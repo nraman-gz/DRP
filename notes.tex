@@ -1,0 +1,188 @@
+\documentclass[12pt, reqno]{article}
+
+\usepackage{amsmath, amssymb, amsthm}
+% \usepackage[scaled=.92]{helvet}
+% \usepackage{txfonts}
+% \usepackage[T1]{fontenc}
+
+
+% \renewcommand{\sfdefault}{phv}  % Set the sans-serif font to Helvetica
+
+\usepackage[T1]{fontenc}
+\usepackage{newpxtext,newpxmath}
+
+\usepackage[bb=ams]{mathalfa}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linktocpage=true,
+	linkcolor=MidnightBlue,
+	urlcolor=BrickRed,
+	citecolor=JungleGreen,
+}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\pgfplotsset{compat=1.18}
+
+\usepackage{tocloft}
+\renewcommand{\cftsecfont}{\sf\bfseries}
+\renewcommand{\cfttoctitlefont}{\Large\sf\bfseries}
+\usepackage[sc]{titlesec}
+
+\titleformat{\section}[block]
+  {\centering \large \sc} % Centering and bold font
+  {} % Empty label (removes numbering)
+  {0pt} % No spacing between label and title
+  {}
+
+\usepackage{wasysym}
+\usepackage{tikz} %draw diagrams
+\usepackage{parskip}
+
+\newtheoremstyle{plain}{5pt}{\topsep}{\it}{}{\sc}{}{0.5em}{}
+
+\theoremstyle{plain}    \newtheorem{theorem}{Theorem}[section]
+\theoremstyle{plain}    \newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{plain}    \newtheorem{claim}[theorem]{Claim}
+\theoremstyle{plain}    \newtheorem{definition}{Definition}[section]
+\theoremstyle{plain}    \newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{plain}    \newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{plain}    \newtheorem{example}[definition]{Example}
+
+\renewcommand{\proofname}{\textnormal{\textsc{Proof}}}
+\newcommand{\exptn}[1]{E#1}
+\DeclareMathOperator*{\rank}{rank}
+\DeclareMathOperator*{\Var}{var}
+\DeclareMathOperator*{\Cov}{cov}
+\DeclareMathOperator*{\Corr}{corr}
+\DeclareMathOperator*{\argmax}{argmax}
+
+
+
+\newcommand{\betahat}{\hat{\beta}}
+
+
+
+
+% Blackboard bold
+\newcommand{\CC}{\mathbb C}
+\newcommand{\EE}{\mathbb E}
+\newcommand{\FF}{\mathbb F}
+\newcommand{\NN}{\mathbb N}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\HH}{\mathbb H}
+
+\newcommand{\eps}{\varepsilon}
+
+
+\numberwithin{equation}{section}
+
+
+\begin{document}
+
+% \section{Deep Learning for Forecasting}
+
+
+% \section{Introduction to Congestion Pricing Methods}
+% Supply oriented and demand oriented solutions to reducing congestion; supply
+% oriented solutions lack long term viability. Demand solutions usually operate by
+% charging a toll to the commuter This paper focuses on reward credit
+% schemes (RCS), where commuters ``subscribe'' to a scheme and earn credits when
+% traveling the network. The allocation of these credits 
+
+% - traffic assignment problem
+
+% - equilibrium and dynamics
+
+% - linked based vs path based
+
+\section{Notes for Meeting}
+Starting too narrow, don't know what I'm applying machine learning techniques
+to
+
+Structure of problem is not well understood
+
+deep learning vs reinforcement learning
+
+state vs. stateless model
+
+
+
+\section{Different Kinds of Neural Networks}
+
+
+
+\section{Introduction to Reinforcement Learning}
+
+\subsection{k-armed Bandit Problem}
+We would like to maximize expected reward based on \(k\) different actions,
+assuming you do not know the true rewards.  For
+each action \(A_t\) that takes a value \(a\), we then have \(q_* (a) = E(R_t |
+A_t = a)\). We maintain an estimate of \(q_*(a)\), \(Q_t(a)\). We can either
+take a ``greedy'' action by choosing what we know to be the highest, or ``explore''
+by choosing a different action. Thus in the short run, we do better by being
+greedy, but in the long run potentially better by exploring, so what actions we
+take depends on how many time steps remain. 
+
+\subsection{Action-Value Methods}
+The simplest way to estimate \(Q_t(a)\) is to replace the population expectation
+with sample averages:
+\[Q_t(a) = \frac{\sum_{i=1}^{t-1}R_t 1(A_t = a)}{\sum_{i=1}^{t-1} 1(A_t = a)}\]
+which is consistent for \(q_*(a)\) by the law of large numbers. In this sense,
+the greedy action \(A_t\) can be described by \(\argmax_a Q_t(a)\). Further,
+instead of always being greedy, we can choose to explore with probability
+\(\eps\) and use an \(\eps\)-greedy method. The advantage is that
+asymptotically, every action is sampled, with little harm to optimality.
+Positive values of \(\eps\) almost always outperform pure greediness, and this
+is especially true for nonstationary rewards. 
+
+When it comes to estimating the value of an action, we can use the formula
+earlier to get 
+\[Q_n = \frac{R_1 + R_2 + \dots + R_{n-1}}{n-1}\]
+However, it is more computationally
+efficient to use an updating rule instead of holding records for every
+selection: 
+\[\mathit{NewEstimate} \leftarrow \mathit{OldEstimate} +
+\mathit{StepSize}[\mathit{Target} - \mathit{OldEstimate}]\]
+Under the previous estimator, we would have \(Q_{n+1} = Q_n + \frac{1}{n}[R_n -
+Q_n]\), and \(Q_1\) is an arbitrary selection. 
+\subsection{Nonstationary Problem and Initial Values}
+One way \(R\) changing over time is to provide more weight to recent rewards,
+which can be done by using a constant step-size parameter \(\alpha \in (0,1]\).
+Our updating formula then becomes \(Q_{n+1} = (1- \alpha)^n Q_1 +
+\sum_{i=1}^{n}\alpha(1-\alpha)^{n-i} R_i\). 
+
+It is clear that with constant step size, the bias induced by the initial choice
+for \(Q_1\) does not go away. This has advantages and disadvantages; on the one
+hand, it can be used to encourage exploration early on (the method has more
+leeway to choose non-greedy actions in the beginning), but at the expense of
+making that assumption. We refer to this as an optimistic initial value, and it
+is a simple but effective way to explore with stationary rewards. 
+
+\subsection{Upper-Confidence-Bound and Gradient Bandit Algorithms}
+Instead of randomly exploring \(\eps\) often, we can take into account how
+fruitful that action may be. If we choose actions according to:
+\[A_t = \argmax_a \left[Q_t(a) c \sqrt{\frac{\ln t}{N_t(a)}}\right]\]
+Further, we may be able to train the algorithm to have a preference over its
+actions; i.e. for each action value \(a\), there is a preference \(H_t(a)\).
+Then the probability of taking that action, based on the softmax
+function\footnote{More research on this}, is:
+\[P(A_t = a) = \frac{e^{H_t(a)}}{\sum_{b=1}^{k}e^{H_t(b)}} = \pi_t(a)\]
+The learning/updating method for these preferences is based on Stochastic
+Gradient Ascent\footnote{write a comparison with exact gradient ascent}:
+\begin{gather*}
+	H_{t+1}(A_t) = H_t(A_t) + \alpha(R_t - \overline{R_t})(1 - \pi_t(A_t))\\
+	H_{t+a}(a) = H_t(a) - \alpha(R_t - \overline{R_t}) 
+\end{gather*}
+Demeaning the rewards serves to check if the latest reward is high or low
+compared to baseline, and if it is high, then the preference is positively
+updated, and vice versa. 
+\end{document}
