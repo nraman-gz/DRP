@@ -174,10 +174,11 @@ fruitful that action may be. If we choose actions according to:
 Further, we may be able to train the algorithm to have a preference over its
 actions; i.e. for each action value \(a\), there is a preference \(H_t(a)\).
 Then the probability of taking that action, based on the softmax
-function\footnote{More research on this}, is:
+function, is:
 \[P(A_t = a) = \frac{e^{H_t(a)}}{\sum_{b=1}^{k}e^{H_t(b)}} = \pi_t(a)\]
 The learning/updating method for these preferences is based on Stochastic
-Gradient Ascent\footnote{write a comparison with exact gradient ascent}:
+Gradient Ascent\footnote{It can be shown that the expected value of the update
+is equal to the expected value of the gradient of the reward}:
 \begin{gather*}
 	H_{t+1}(A_t) = H_t(A_t) + \alpha(R_t - \overline{R_t})(1 - \pi_t(A_t))\\
 	H_{t+a}(a) = H_t(a) - \alpha(R_t - \overline{R_t}) 
@@ -185,4 +186,31 @@ Gradient Ascent\footnote{write a comparison with exact gradient ascent}:
 Demeaning the rewards serves to check if the latest reward is high or low
 compared to baseline, and if it is high, then the preference is positively
 updated, and vice versa. 
+
+\section{Policies and Markov Decision Processes}
+In our framework, there is an agent and an environment, and at each time step,
+the agent makes a decision by selecting an action. Then, the environment is
+updated and changed, and the agent selects another action. The means by which
+the agent gains information about the environment is a representation, known as
+a state \(S_t \in \mathcal{S}\); the consequent action is \(A_t \in
+\mathcal{A}\) with a reward \(R_t \in \mathcal{R}\). \(A_t, S_t\), and \(R_t\)
+are random variables that take on  where \(\mathcal{A},
+\mathcal{S}, \mathcal{R}\) are the set of all actions and
+states. 
+
+The agent seeks to maximize expected return \(G_t\), some function of the
+rewards. It is nice to use a discounted sum of the form:
+\[G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \dots =
+\sum_{k=0}^{\infty}\gamma^k R_{t+k+1}, \ \gamma \in [0,1]\]
+
+A policy \(\pi: \mathcal{S} \to \RR\) is a mapping from a state to a
+probability of selecting an action, where if the agent is following the policy
+\(\pi\), \(P(A_t = a | S_t = s) = \pi(a|s)\). The state-value function \(v_{\pi}\) is
+the expected return in the state \(s\) of following \(\pi\): 
+\[v_{\pi}(s) = E(G_t | S_t = s\]
+and the action-value function \(q_{\pi}\):
+\[q_{\pi}(s,a) = E(G_t | S_t = s, A_t = a)\]
+The value functions can be estimated by sample averages of the rewards received
+under certain 
+
 \end{document}

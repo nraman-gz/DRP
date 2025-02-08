@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.12)  5 FEB 2025 16:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.12)  8 FEB 2025 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -927,34 +927,34 @@ LaTeX Font Info:    Font shape `OT1/zpltlf/m/it' will be
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/it' will be
 (Font)              scaled to size 6.6pt on input line 153.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 177.
+(Font)              scaled to size 8.8pt on input line 180.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 177.
+(Font)              scaled to size 10.0pt on input line 181.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 177.
+(Font)              scaled to size 10.0pt on input line 181.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 177.
+(Font)              scaled to size 7.3pt on input line 181.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 177.
+(Font)              scaled to size 5.5pt on input line 181.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/it' will be
-(Font)              scaled to size 10.0pt on input line 177.
+(Font)              scaled to size 10.0pt on input line 181.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/it' will be
-(Font)              scaled to size 7.3pt on input line 177.
+(Font)              scaled to size 7.3pt on input line 181.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/it' will be
-(Font)              scaled to size 5.5pt on input line 177.
+(Font)              scaled to size 5.5pt on input line 181.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.0pt on input line 177.
+(Font)              scaled to size 10.0pt on input line 181.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.3pt on input line 177.
+(Font)              scaled to size 7.3pt on input line 181.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.5pt on input line 177.
+(Font)              scaled to size 5.5pt on input line 181.
 
 
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 177.
+(Font)              size <5> substituted on input line 181.
 
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 177.
+(Font)              scaled to size 7.3pt on input line 181.
 [2] [3] (./notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -966,21 +966,21 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: C3CF690DEC63AB8AE53547ECE0E5D4AD;1537.
+(rerunfilecheck)             Checksum: 485F9424FF61BDA847C98C0F69063F2C;1782.
  ) 
 Here is how much of TeX's memory you used:
- 35623 strings out of 474116
- 792217 string characters out of 5743682
+ 35624 strings out of 474116
+ 792226 string characters out of 5743682
  1937187 words of memory out of 5000000
- 57356 multiletter control sequences out of 15000+600000
+ 57357 multiletter control sequences out of 15000+600000
  616556 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,8n,101p,1218b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on notes.pdf (3 pages, 104973 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
+Output written on notes.pdf (3 pages, 112297 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
+ 112 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
  13 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 77 words of extra memory for PDF output out of 10000 (max. 10000000)
 
