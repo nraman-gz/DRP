@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.12)  8 FEB 2025 16:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.12)  11 FEB 2025 18:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -955,7 +955,18 @@ LaTeX Font Warning: Font shape `U/wasy/m/n' in size <5.5> not available
 
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 7.3pt on input line 181.
-[2] [3] (./notes.aux)
+[2]
+Overfull \hbox (26.1503pt too wide) in paragraph at lines 207--213
+\T1/zpltlf/m/n/12 tain ``The state must in-clude in-for-ma-tion about all as-pects of the past agent^^Uenvironment
+ []
+
+
+Overfull \vbox (1.88567pt too high) has occurred while \output is active []
+
+ [3]
+LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 243.
+ [4] [5] (./notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -966,21 +977,21 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: 485F9424FF61BDA847C98C0F69063F2C;1782.
+(rerunfilecheck)             Checksum: 7C9C7FAC754D0B2237CD885A14E804A6;2053.
  ) 
 Here is how much of TeX's memory you used:
- 35624 strings out of 474116
- 792226 string characters out of 5743682
+ 35631 strings out of 474116
+ 792315 string characters out of 5743682
  1937187 words of memory out of 5000000
- 57357 multiletter control sequences out of 15000+600000
- 616556 words of font info for 132 fonts, out of 8000000 for 9000
+ 57360 multiletter control sequences out of 15000+600000
+ 619585 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,8n,101p,1218b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,13n,101p,1218b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on notes.pdf (3 pages, 112297 bytes).
+Output written on notes.pdf (5 pages, 119306 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 129 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
+ 17 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
