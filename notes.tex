@@ -252,7 +252,14 @@ dynamics of the system established earlier.
 Our goal with a reinforcement learning problem is essentially to find the
 highest yielding policy. Value functions provide a partial ordering over
 policies: \(\pi\) is better than or equal to \(\pi'\) if \(v_{\pi}(s) \ge
-v_{\pi'}(s) \ \forall s \in \mathcal{S}\).
+v_{\pi'}(s) \ \forall s \in \mathcal{S}\). The overall best policy is denoted
+\(\pi^*\), and its state value function is called the optimal state-value
+function \(v_*\), defined as:
+\[v_*(s) = \max_{\pi}v_{\pi}(s), \ \forall s \in \mathcal{S} \]
+and also gives rise to an optimal action-value function \(q_*\):
+\[q_*(s,a) = \max_{\pi}q_{\pi}(s,a), \ \forall s \in \mathcal{S}, a \in \mathcal{A}\]
 
+We can apply this notion of optimality to the Bellman equation, and get the
+Bellman optimality equation  
 
 \end{document}
