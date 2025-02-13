@@ -227,7 +227,7 @@ and the action-value function \(q_{\pi}\):
 The value functions can be estimated by sample averages of the rewards received
 under certain policies, actions, and states, i.e. if we keep averages of actual
 returns in all the states we encounter, we can estimate \(v_{\pi}\), and if we keep seperate
-averages depending on our actions, we estimate \(q_{\pi}\).
+averages depending on our actions, we estimate \(q_{\pi}\) (Monte-Carlo Methods).
 
 \subsection{The Bellman Equation}
 Recall the definition of a (discrete) conditional expectation, if \(X\) is a
@@ -258,8 +258,22 @@ function \(v_*\), defined as:
 \[v_*(s) = \max_{\pi}v_{\pi}(s), \ \forall s \in \mathcal{S} \]
 and also gives rise to an optimal action-value function \(q_*\):
 \[q_*(s,a) = \max_{\pi}q_{\pi}(s,a), \ \forall s \in \mathcal{S}, a \in \mathcal{A}\]
+Since this gives the 
+expected return for taking action \(a\) in state \(s\) and thereafter following
+an optimal policy, we can rewrite \(q_*\) in terms of \(v_*\):
+\[q_{*}(s,a) = E(R_{t+1} + \gamma v_{*}(S_{t+1})|S_t = s, A_t = a)\]
 
 We can apply this notion of optimality to the Bellman equation, and get the
-Bellman optimality equation  
+Bellman optimality equation, which expresses the fact that the value function
+for a given state must be the expected return from choosing the best action for
+that state:
+\begin{gather*}
+	v_*(a) = \max_{a \in \mathcal{A}(s)}q_{\pi^*}(s,a) \\
+	= \max_a E(R_{t+1} + \gamma v_{*}(S_{t+1})|S_t = s, A_t = a) \\
+	= \max_a \sum_{s' \in \mathcal{S}}\sum_{r \in \mathcal{R}}p(s', r | s,a)[r + \gamma v_{\pi^*}(s')]
+\end{gather*}
+
+The next sections will focus on actually estimating the value functions 
+\section{Dynamic Programming and Monte Carlo Methods}
 
 \end{document}
