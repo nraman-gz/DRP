@@ -274,6 +274,20 @@ that state:
 \end{gather*}
 
 The next sections will focus on actually estimating the value functions 
-\section{Dynamic Programming and Monte Carlo Methods}
+\section{Monte Carlo Methods and Temporal Difference Learning}
+
+\subsection{Actor Critic Method Briefly}
+The actor critic method is a policy gradient method that attempts to learn an
+optimal policy using two different processes, the actor and the critic.
+The actor follows a parametrized policy \(\pi_{\theta}(a|s)\), where \(\theta =
+\argmax J(\theta )=\mathbb {E} _{\pi _{\theta }}\left[\sum _{t=0}^{T}\gamma
+^{t}r_{t}\right]\). \(J(\theta) \)
+\begin{itemize}
+	\item two neural networks, actor network and critic network
+	\item actor network has parameter \(\theta\) to estimate the policy
+	\(\pi_{\theta}(s,a)\), critic network has parameter \(w\) to estimate
+	\(q(s,a)\) and update the policy
+	\item 
+\end{itemize}
 
 \end{document}
